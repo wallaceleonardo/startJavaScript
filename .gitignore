@@ -1,10 +1,2 @@
-# Ignorar arquivos de log
-*.log
-
 # Ignorar diretório de build
-/.vscode/
-
-# Ignorar arquivos de configuração do sistema
-.DS_Store
-Thumbs.db
-
+.vscode/
