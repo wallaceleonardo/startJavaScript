@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Descontos</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <h2>Calculadora de Descontos</h2>
+    <label class="inputCompra" for="valorCompra">Valor da Compra:</label>
+    <input type="number" id="valorCompra" placeholder="Insira o valor da compra"><br><br>
+    <label for="percentualDesconto">Percentual de Desconto (%):</label>
+    <input type="number" id="percentualDesconto" placeholder="Insira a porcentagem de desconto"><br><br>
+    <button onclick="calcularDesconto()">Calcular</button>
+    <p id="resultado"></p>
+
+    <script>
+        function calcularDesconto() {
+            const valorCompra = parseFloat(document.getElementById('valorCompra').value);
+            const percentualDesconto = parseFloat(document.getElementById('percentualDesconto').value);
+
+            if (isNaN(valorCompra) || isNaN(percentualDesconto)) {
+                document.getElementById('resultado').innerText = 'Por favor, insira valores válidos.';
+                return;
+            }
+
+            const valorDesconto = (valorCompra * percentualDesconto) / 100;
+            const valorTotal = valorCompra - valorDesconto;
+
+            document.getElementById('resultado').innerText = `Valor do Desconto: R$ ${valorDesconto.toFixed(2)}\nValor Total: R$ ${valorTotal.toFixed(2)}`;
+        }
+    </script>
+</body>
+</html>
